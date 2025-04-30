@@ -174,7 +174,7 @@ function fetchRealTimeData(filter) {
       : baseThemes.filter((_, index) => index !== 2);
   return currentThemes
     .map((theme, index) => {
-      const fluctuation = Math.sin(simCounter * 0.5 + index * 0.3) * 1.8;
+      const fluctuation = Math.sin(simCounter * 0.5 + index * 0.3) * 0.5;
       return {
         ...theme,
         avgChange: parseFloat((theme.avgChange + fluctuation).toFixed(2)),
