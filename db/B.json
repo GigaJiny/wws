@@ -1,0 +1,26 @@
+{
+  "Bitget": {
+    "en": "Bitget",
+    "zh-TW": "Bitget",
+    "zh-CN": "Bitget",
+    "pt": "Bitget"
+  },
+  "Bybit": {
+    "en": "Bybit",
+    "zh-TW": "Bybit",
+    "zh-CN": "Bybit",
+    "pt": "Bybit"
+  },
+  "Binance": {
+    "en": "Binance",
+    "zh-TW": "Binance",
+    "zh-CN": "Binance",
+    "pt": "Binance"
+  },
+  "BingX": {
+    "en": "BingX",
+    "zh-TW": "BingX",
+    "zh-CN": "BingX",
+    "pt": "BingX"
+  }
+}

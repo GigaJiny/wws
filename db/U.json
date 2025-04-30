@@ -1,0 +1,41 @@
+{
+  "UID를 입력해주세요": {
+    "id": "Silakan masukkan UID Anda",
+    "en": "Please enter your UID",
+    "zh-TW": "請輸入您的UID",
+    "zh-CN": "请输入您的UID",
+    "pt": "Por favor, insira seu UID",
+    "es": "Por favor ingrese su UID",
+    "fr": "Veuillez saisir votre UID",
+    "ru": "Пожалуйста, введите ваш UID",
+    "ar": "الرجاء إدخال معرف المستخدم الخاص بك",
+    "tr": "Lütfen UID'nizi girin",
+    "mn": "UID-ээ оруулна уу",
+    "uz": "Iltimos, UID-ni kiriting"
+  },
+  "UID연동 및 트레이딩 커미션 발생": {
+    "en": "UID linking and trading commissions",
+    "zh-CN": "UID 关联和交易佣金",
+    "pt": "Comissões de vinculação e negociação de UID",
+    "es": "Vinculación de UID y comisiones comerciales",
+    "fr": "Commissions de liaison et de négociation UID",
+    "ru": "Комиссии за привязку и торговлю UID",
+    "ar": "عمولات ربط وتداول معرف UID",
+    "tr": "UID bağlantısı ve işlem komisyonları",
+    "mn": "UID холбох болон арилжааны комисс",
+    "uz": "UID ulash va savdo komissiyalari",
+    "id": "Komisi penautan dan perdagangan UID"
+  },
+  "UID를 입력해 주세요": {
+    "en": "Please enter your UID",
+    "zh-TW": "請輸入您的UID",
+    "zh-CN": "请输入您的UID",
+    "pt": "Por favor, insira seu UID"
+  },
+  "UID 정보를 찾을 수 없습니다.": {
+    "en": "UID information not found.",
+    "zh-TW": "未找到 UID 資訊。",
+    "zh-CN": "未找到 UID 信息。",
+    "pt": "Informações de UID não encontradas."
+  }
+}

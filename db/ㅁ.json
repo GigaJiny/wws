@@ -1,0 +1,90 @@
+{
+  "마이페이지": {
+    "zh-TW": "我的頁面",
+    "en": "My Page",
+    "zh-CN": "我的页面",
+    "pt": "Minha página",
+    "es": "Mi página",
+    "fr": "Ma page",
+    "ru": "Моя страница",
+    "ar": "صفحتي",
+    "tr": "Benim Sayfam",
+    "mn": "Миний хуудас",
+    "uz": "Mening sahifam",
+    "id": "Halaman Saya"
+  },
+  "메일 재전송하기": {
+    "en": "Resend mail",
+    "zh-TW": "重新發送郵件",
+    "zh-CN": "重新发送邮件",
+    "pt": "Reenviar e-mail",
+    "es": "Reenviar correo"
+  },
+  "목": {
+    "en": "neck",
+    "zh-TW": "脖子",
+    "zh-CN": "脖子",
+    "pt": "pescoço",
+    "es": "cuello",
+    "fr": "cou",
+    "ru": "шея",
+    "ar": "رقبة",
+    "mn": "хүзүү",
+    "uz": "bo'yin",
+    "id": "leher"
+  },
+  "매일 20시에 시스템 등록 정보가 업데이트 됩니다": {
+    "en": "System registration information is updated every day at 20:00",
+    "zh-TW": "系統註冊資訊每日20:00更新",
+    "zh-CN": "系统注册信息每日20:00更新",
+    "pt": "As informações de registro do sistema são atualizadas todos os dias às 20:00",
+    "es": "La información de registro del sistema se actualiza todos los días a las 20:00",
+    "fr": "Les informations d'enregistrement du système sont mises à jour tous les jours à 20h00",
+    "ru": "Информация о регистрации в системе обновляется каждый день в 20:00.",
+    "ar": "يتم تحديث معلومات تسجيل النظام كل يوم الساعة 20:00",
+    "tr": "Sistem kayıt bilgileri her gün saat 20:00'da güncellenmektedir.",
+    "mn": "Системийн бүртгэлийн мэдээлэл өдөр бүр 20:00 цагт шинэчлэгддэг",
+    "uz": "Tizimni ro'yxatdan o'tkazish ma'lumotlari har kuni soat 20:00 da yangilanadi",
+    "id": "Informasi registrasi sistem diperbarui setiap hari pukul 20:00"
+  },
+  "매년 ": {
+    "en": "Every year",
+    "zh-CN": "每年 ",
+    "pt": "anualmente ",
+    "es": "anualmente ",
+    "fr": "annuellement ",
+    "ru": "ежегодно ",
+    "ar": "سنويا ",
+    "tr": "yıllık ",
+    "mn": "жил бүр ",
+    "uz": "har yili ",
+    "id": "setiap tahun "
+  },
+  "만에 끝나는": {
+    "en": "Ending in ten thousand",
+    "zh-CN": "以万结尾",
+    "pt": "Terminando em dez mil",
+    "es": "Terminando en diez mil",
+    "fr": "Se terminant par dix mille",
+    "ru": "Оканчивается на десять тысяч",
+    "ar": "تنتهي بعشرة آلاف",
+    "tr": "On binle biten",
+    "mn": "Арван мянгаар дуусна",
+    "uz": "O'n mingda tugaydi",
+    "id": "Berakhir dalam sepuluh ribu"
+  },
+  " 및": {
+    "en": " and",
+    "zh-TW": " 和",
+    "zh-CN": " 和",
+    "pt": " e",
+    "es": " y",
+    "fr": " et",
+    "ru": " и",
+    "ar": " و",
+    "tr": " Ve",
+    "mn": " болон",
+    "uz": " va",
+    "id": " Dan"
+  }
+}

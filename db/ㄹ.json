@@ -1,0 +1,121 @@
+{
+  "링크": {
+    "zh-TW": "關聯",
+    "en": "link",
+    "zh-CN": "关联",
+    "pt": "link",
+    "es": "enlace",
+    "fr": "lien",
+    "ru": "связь",
+    "ar": "وصلة",
+    "tr": "bağlantı",
+    "mn": "холбоос",
+    "uz": "havola",
+    "id": "link"
+  },
+  "링크 이동하기": {
+    "zh-TW": "前往連結",
+    "en": "Go to link",
+    "zh-CN": "转到链接",
+    "pt": "Ir para o link",
+    "es": "Ir al enlace",
+    "fr": "Accéder au lien",
+    "ru": "Перейти по ссылке",
+    "ar": "انتقل إلى الرابط",
+    "tr": "Bağlantıya git",
+    "mn": "Холбоос руу очно уу",
+    "uz": "Havolaga o'ting",
+    "id": "Buka tautan"
+  },
+  "를 인증해주세요": {
+    "zh-TW": "請驗證",
+    "en": "Please authenticate",
+    "zh-CN": "请验证",
+    "pt": "Por favor autentique",
+    "es": "Por favor autenticar",
+    "fr": "Veuillez vous authentifier",
+    "ru": "Пожалуйста, подтвердите подлинность",
+    "ar": "يرجى المصادقة",
+    "tr": "Lütfen kimliğinizi doğrulayın",
+    "mn": "Баталгаажуулна уу",
+    "uz": "Iltimos, autentifikatsiya qiling",
+    "id": "Mohon autentikasi"
+  },
+  "로그아웃": {
+    "en": "log out",
+    "zh-TW": "登出",
+    "zh-CN": "登出",
+    "pt": "sair",
+    "es": "finalizar la sesión",
+    "fr": "se déconnecter",
+    "ru": "выйти из системы",
+    "ar": "تسجيل الخروج",
+    "tr": "çıkış yap",
+    "mn": "гарах",
+    "uz": "tizimdan chiqish",
+    "id": "keluar"
+  },
+  "리워드 내역": {
+    "en": "Reward details",
+    "zh-TW": "獎勵詳情",
+    "zh-CN": "奖励详情",
+    "pt": "Detalhes da recompensa",
+    "es": "Detalles de la recompensa",
+    "fr": "Détails de la récompense",
+    "ru": "Подробности вознаграждения",
+    "ar": "تفاصيل المكافأة",
+    "mn": "Шагналын дэлгэрэнгүй мэдээлэл",
+    "uz": "Mukofot tafsilotlari",
+    "id": "Detail hadiah"
+  },
+  "로그인": {
+    "id": "Masuk",
+    "en": "log in",
+    "zh-TW": "登入",
+    "zh-CN": "登录",
+    "pt": "Conecte-se",
+    "es": "acceso",
+    "fr": "se connecter",
+    "ru": "авторизоваться",
+    "ar": "تسجيل الدخول",
+    "tr": "giriş yapmak",
+    "mn": "нэвтэрнэ үү",
+    "uz": "tizimga kirish"
+  },
+  "레버리지를 얼마나 사용하시나요?": {
+    "en": "How much leverage do you use?",
+    "zh-TW": "您使用多大的槓桿？",
+    "zh-CN": "您使用多大的杠杆？",
+    "pt": "Quanta alavancagem você usa?",
+    "es": "¿Cuánta influencia utilizas?",
+    "fr": "Quel effet de levier utilisez-vous ?",
+    "ru": "Какое кредитное плечо вы используете?",
+    "ar": "ما هو مقدار الرافعة المالية التي تستخدمها؟",
+    "tr": "Ne kadar kaldıraç kullanıyorsunuz?",
+    "mn": "Та хэр их хөшүүрэг ашигладаг вэ?",
+    "uz": "Siz qancha kaldıraçdan foydalanasiz?",
+    "id": "Berapa banyak leverage yang Anda gunakan?"
+  },
+  "를 만나보세요": {
+    "en": "Meet",
+    "zh-CN": "见面",
+    "pt": "Encontrar",
+    "es": "Encontrarse",
+    "fr": "Rencontrer",
+    "ru": "Встретиться",
+    "ar": "يقابل",
+    "tr": "Tanışmak",
+    "mn": "Уулзана",
+    "uz": "Tanishish",
+    "id": "Bertemu"
+  },
+  "로그인 성공": {
+    "id": "Login berhasil"
+  },
+  "를 입력해 주세요": {
+    "en": "Please enter",
+    "zh-TW": "請輸入",
+    "zh-CN": "请输入",
+    "pt": "Por favor insira"
+  }
+}

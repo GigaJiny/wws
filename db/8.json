@@ -1,0 +1,16 @@
+{
+  "8-20개 사이의 비밀번호를 입력해 주세요": {
+    "zh-TW": "請輸入8至20個字元之間的密碼",
+    "zh-CN": "请输入8至20个字符之间的密码",
+    "pt": "Por favor, digite uma senha entre 8 e 20 caracteres",
+    "es": "Por favor, introduzca una contraseña entre 8 y 20 caracteres.",
+    "fr": "Veuillez saisir un mot de passe entre 8 et 20 caractères",
+    "ru": "Введите пароль длиной от 8 до 20 символов.",
+    "ar": "الرجاء إدخال كلمة مرور تتراوح بين 8 و 20 حرفًا",
+    "tr": "Lütfen 8 ile 20 karakter arasında bir şifre girin",
+    "mn": "8-аас 20 тэмдэгтийн хооронд нууц үг оруулна уу",
+    "uz": "Iltimos, 8 va 20 ta belgidan iborat parolni kiriting",
+    "id": "Silakan masukkan kata sandi antara 8 dan 20 karakter",
+    "en": "Please enter a password between 8 and 20 characters"
+  }
+}

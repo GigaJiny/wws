@@ -1,0 +1,44 @@
+{
+  "50 USDT 이상 출금 가능": {
+    "zh-TW": "可提現 50 USDT 或以上",
+    "en": "Withdrawal possible for 50 USDT or more",
+    "zh-CN": "可提现 50 USDT 或以上",
+    "pt": "Retirada possível para 50 USDT ou mais",
+    "es": "Retiro posible por 50 USDT o más",
+    "fr": "Retrait possible pour 50 USDT ou plus",
+    "ru": "Вывод возможен на сумму 50 USDT и более",
+    "ar": "إمكانية السحب بمبلغ 50 USDT أو أكثر",
+    "tr": "50 USDT veya daha fazlası için para çekme işlemi mümkündür",
+    "mn": "50 USDT ба түүнээс дээш үнээр татан авалт хийх боломжтой",
+    "uz": "50 USDT yoki undan ko'proq pul olish mumkin",
+    "id": "Penarikan dimungkinkan untuk 50 USDT atau lebih"
+  },
+  "50 USDT 이상 출금 가능합니다": {
+    "zh-TW": "可提現 50 USDT 或以上",
+    "en": "Withdrawals of 50 USDT or more are possible",
+    "zh-CN": "可提现 50 USDT 或以上",
+    "pt": "Retiradas de 50 USDT ou mais são possíveis",
+    "es": "Son posibles retiros de 50 USDT o más",
+    "fr": "Les retraits de 50 USDT ou plus sont possibles",
+    "ru": "Возможен вывод средств в размере 50 USDT и более.",
+    "ar": "من الممكن سحب 50 USDT أو أكثر",
+    "tr": "50 USDT veya daha fazla para çekme işlemi mümkündür",
+    "mn": "50 USDT ба түүнээс дээш мөнгө авах боломжтой",
+    "uz": "50 USDT yoki undan ortiq pul yechib olish mumkin",
+    "id": "Penarikan 50 USDT atau lebih dimungkinkan"
+  },
+  "551584285199": {
+    "id": "551584285199",
+    "uz": "551584285199",
+    "mn": "551584285199",
+    "tr": "551584285199",
+    "ar": "551584285199",
+    "ru": "551584285199",
+    "fr": "551584285199",
+    "es": "551584285199",
+    "pt": "551584285199",
+    "zh-CN": "551584285199",
+    "zh-TW": "551584285199",
+    "en": "551584285199"
+  }
+}
