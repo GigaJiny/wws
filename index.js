@@ -53,6 +53,7 @@ app.get("/kospi", (req, res) => {
       state: change >= 0 ? "Up" : "Down",
     };
   });
+  console.log(calculatedData);
   res.json(calculatedData);
 });
 
