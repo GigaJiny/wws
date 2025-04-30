@@ -259,7 +259,7 @@ const broadcastTheme = () => {
 
 // 주기적 브로드캐스트 설정
 const broadcastInterval = setInterval(broadcastKospi, 1000);
-const broadcastThemeInterval = setInterval(broadcastTheme, 1000);
+const broadcastThemeInterval = setInterval(broadcastTheme, 3000);
 
 // WebSocket 연결 처리 - Kospi
 wssKospi.on("connection", (ws, req) => {
