@@ -3,6 +3,7 @@ let marketState = "NORMAL"; // 'NORMAL', 'UP', 'DOWN' 상태 추가
 let stateStartTime = 0; // 상태 시작 시간
 let stateTargetDuration = 0; // 상태 지속 시간(초)
 let boostingThemes = []; // UP 상태에서 특별히 많이 오르는 테마들
+let isBoostingThemesInitialized = false; // 부스팅 테마가 초기화되었는지 여부
 
 function fetchRealTimeData(filter) {
   // filter 인자 추가 (현재 미사용)
@@ -12,50 +13,6 @@ function fetchRealTimeData(filter) {
     }, 카운터: ${simCounter}, 상태: ${marketState})`
   );
   simCounter++;
-
-  // 랜덤하게 상태 변경 (약 10초마다 상태 변경 시도)
-  const currentTime = Date.now() / 1000;
-  if (
-    marketState === "NORMAL" &&
-    Math.random() < 0.1 // 10% 확률로 상태 변경
-  ) {
-    if (Math.random() < 0.5) {
-      marketState = "UP";
-      stateStartTime = currentTime;
-      stateTargetDuration = 10; // 10초 지속
-      // 하위 2~4등 중에서 랜덤하게 1~2개 선택하여 부스팅
-      const sortedThemes = [...baseThemes].sort(
-        (a, b) => a.avgChange - b.avgChange
-      );
-      const candidateThemes = sortedThemes.slice(1, 4); // 하위 2~4등
-      boostingThemes = [];
-      // 1~2개의 테마 랜덤 선택
-      while (
-        boostingThemes.length < Math.floor(Math.random() * 2) + 1 &&
-        candidateThemes.length > 0
-      ) {
-        const randomIndex = Math.floor(Math.random() * candidateThemes.length);
-        boostingThemes.push(candidateThemes[randomIndex].themeId);
-        candidateThemes.splice(randomIndex, 1);
-      }
-      console.log(`상승장 시작! 부스팅 테마: ${boostingThemes.join(", ")}`);
-    } else {
-      marketState = "DOWN";
-      stateStartTime = currentTime;
-      stateTargetDuration = 5; // 5초 지속
-      console.log("하락장 시작!");
-    }
-  }
-
-  // 상태 종료 체크
-  if (
-    (marketState === "UP" || marketState === "DOWN") &&
-    currentTime > stateStartTime + stateTargetDuration
-  ) {
-    marketState = "NORMAL";
-    boostingThemes = [];
-    console.log("정상 시장으로 복귀");
-  }
 
   const baseThemes = [
     {
@@ -179,6 +136,55 @@ function fetchRealTimeData(filter) {
       color: "#EE6666",
     },
   ];
+
+  // 부스팅 테마 초기화 (최초 1회만)
+  if (!isBoostingThemesInitialized) {
+    const sortedThemes = [...baseThemes].sort(
+      (a, b) => a.avgChange - b.avgChange
+    );
+    const candidateThemes = sortedThemes.slice(1, 4); // 하위 2~4등
+
+    // 1~2개의 테마 랜덤 선택
+    while (
+      boostingThemes.length < Math.floor(Math.random() * 2) + 1 &&
+      candidateThemes.length > 0
+    ) {
+      const randomIndex = Math.floor(Math.random() * candidateThemes.length);
+      boostingThemes.push(candidateThemes[randomIndex].themeId);
+      candidateThemes.splice(randomIndex, 1);
+    }
+
+    console.log(`부스팅 테마 초기화: ${boostingThemes.join(", ")}`);
+    isBoostingThemesInitialized = true;
+  }
+
+  // 랜덤하게 상태 변경 (약 10초마다 상태 변경 시도)
+  const currentTime = Date.now() / 1000;
+  if (
+    marketState === "NORMAL" &&
+    Math.random() < 0.1 // 10% 확률로 상태 변경
+  ) {
+    if (Math.random() < 0.5) {
+      marketState = "UP";
+      stateStartTime = currentTime;
+      stateTargetDuration = 10; // 10초 지속
+      console.log(`상승장 시작! 부스팅 테마: ${boostingThemes.join(", ")}`);
+    } else {
+      marketState = "DOWN";
+      stateStartTime = currentTime;
+      stateTargetDuration = 5; // 5초 지속
+      console.log("하락장 시작!");
+    }
+  }
+
+  // 상태 종료 체크
+  if (
+    (marketState === "UP" || marketState === "DOWN") &&
+    currentTime > stateStartTime + stateTargetDuration
+  ) {
+    marketState = "NORMAL";
+    console.log("정상 시장으로 복귀");
+  }
 
   const currentThemes =
     simCounter % 2 === 0
