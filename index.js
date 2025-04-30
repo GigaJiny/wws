@@ -35,133 +35,133 @@ const mockData = [
 
 // Initialize Express app
 const app = express();
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
-// Firebase Admin SDK 초기화 - 경로 확인
-const serviceAccountPath = path.join(
-  __dirname,
-  "./oktether-552e6-firebase-adminsdk-fbsvc-47ec0b1dda.json"
-);
-if (!fs.existsSync(serviceAccountPath)) {
-  console.error(
-    "Firebase service account key file not found at:",
-    serviceAccountPath
-  );
-  process.exit(1); // 키 파일 없으면 서버 시작 중단
-}
-const serviceAccount = require(serviceAccountPath);
+// // Firebase Admin SDK 초기화 - 경로 확인
+// const serviceAccountPath = path.join(
+//   __dirname,
+//   "./oktether-552e6-firebase-adminsdk-fbsvc-47ec0b1dda.json"
+// );
+// if (!fs.existsSync(serviceAccountPath)) {
+//   console.error(
+//     "Firebase service account key file not found at:",
+//     serviceAccountPath
+//   );
+//   process.exit(1); // 키 파일 없으면 서버 시작 중단
+// }
+// const serviceAccount = require(serviceAccountPath);
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+// });
 
-const userJsonPath = path.join(__dirname, "user.json");
+// const userJsonPath = path.join(__dirname, "user.json");
 
-// user.json 파일이 없으면 빈 배열로 초기화된 파일 생성
-if (!fs.existsSync(userJsonPath)) {
-  console.log("user.json not found, creating an empty file.");
-  fs.writeFileSync(
-    userJsonPath,
-    JSON.stringify({ tokens: [] }, null, 2),
-    "utf8"
-  );
-}
+// // user.json 파일이 없으면 빈 배열로 초기화된 파일 생성
+// if (!fs.existsSync(userJsonPath)) {
+//   console.log("user.json not found, creating an empty file.");
+//   fs.writeFileSync(
+//     userJsonPath,
+//     JSON.stringify({ tokens: [] }, null, 2),
+//     "utf8"
+//   );
+// }
 
-// API to send FCM notification
-app.post("/api/send-notification", async (req, res) => {
-  try {
-    console.log("send-notification request received:", req.body);
-    const { title, body } = req.body;
+// // API to send FCM notification
+// app.post("/api/send-notification", async (req, res) => {
+//   try {
+//     console.log("send-notification request received:", req.body);
+//     const { title, body } = req.body;
 
-    // Read tokens from file
-    let tokens = [];
-    try {
-      const userData = JSON.parse(fs.readFileSync(userJsonPath, "utf8"));
-      tokens = userData.tokens || [];
-    } catch (readError) {
-      console.error("Error reading or parsing user.json:", readError);
-      // 파일 읽기/파싱 오류 시에도 계속 진행하되 로그를 남김
-    }
+//     // Read tokens from file
+//     let tokens = [];
+//     try {
+//       const userData = JSON.parse(fs.readFileSync(userJsonPath, "utf8"));
+//       tokens = userData.tokens || [];
+//     } catch (readError) {
+//       console.error("Error reading or parsing user.json:", readError);
+//       // 파일 읽기/파싱 오류 시에도 계속 진행하되 로그를 남김
+//     }
 
-    console.log("Tokens found:", tokens);
+//     console.log("Tokens found:", tokens);
 
-    if (tokens.length === 0) {
-      console.log("No tokens found in user.json");
-      return res.status(404).json({ error: "알림을 보낼 토큰이 없습니다." });
-    }
+//     if (tokens.length === 0) {
+//       console.log("No tokens found in user.json");
+//       return res.status(404).json({ error: "알림을 보낼 토큰이 없습니다." });
+//     }
 
-    // Default test message if not provided
-    const notificationTitle = title || "테스트 타이틀";
-    const notificationBody = body || "테스트 컨텐츠";
+//     // Default test message if not provided
+//     const notificationTitle = title || "테스트 타이틀";
+//     const notificationBody = body || "테스트 컨텐츠";
 
-    //- 메시지 페이로드 생성
-    const message = {
-      notification: {
-        title: notificationTitle,
-        body: notificationBody,
-      },
-      android: {
-        // priority: 'high', // 필요시 우선순위 설정
-        notification: {
-          channelId: "ok-tether", // 앱의 알림 채널 ID와 일치해야 함
-          // sound: 'default', // 기본 알림 소리
-          // tag: 'your_notification_tag' // 필요시 알림 그룹화 태그
-        },
-      },
-      apns: {
-        headers: {
-          "apns-priority": "10", // iOS 우선순위 (5 또는 10)
-        },
-        payload: {
-          aps: {
-            alert: {
-              title: notificationTitle,
-              body: notificationBody,
-            },
-            sound: "default", // 기본 알림 소리
-            // 'content-available': 1, // 백그라운드 업데이트 알림 시 필요 (일반 알림과 동시 사용 주의)
-            // 'mutable-content': 1, // Notification Service Extension 사용 시
-          },
-        },
-      },
-      // 데이터 페이로드: 앱이 포그라운드/백그라운드 상태일 때 추가 데이터 전달
-      data: {
-        screen: "Mypage", // 클라이언트 앱에서 이 값을 사용하여 특정 화면으로 이동
-        // 추가적인 필요한 데이터 전달 가능
-        // 'custom_key': 'custom_value'
-      },
-      tokens: tokens, // 배열 형태로 토큰 전달
-    };
+//     //- 메시지 페이로드 생성
+//     const message = {
+//       notification: {
+//         title: notificationTitle,
+//         body: notificationBody,
+//       },
+//       android: {
+//         // priority: 'high', // 필요시 우선순위 설정
+//         notification: {
+//           channelId: "ok-tether", // 앱의 알림 채널 ID와 일치해야 함
+//           // sound: 'default', // 기본 알림 소리
+//           // tag: 'your_notification_tag' // 필요시 알림 그룹화 태그
+//         },
+//       },
+//       apns: {
+//         headers: {
+//           "apns-priority": "10", // iOS 우선순위 (5 또는 10)
+//         },
+//         payload: {
+//           aps: {
+//             alert: {
+//               title: notificationTitle,
+//               body: notificationBody,
+//             },
+//             sound: "default", // 기본 알림 소리
+//             // 'content-available': 1, // 백그라운드 업데이트 알림 시 필요 (일반 알림과 동시 사용 주의)
+//             // 'mutable-content': 1, // Notification Service Extension 사용 시
+//           },
+//         },
+//       },
+//       // 데이터 페이로드: 앱이 포그라운드/백그라운드 상태일 때 추가 데이터 전달
+//       data: {
+//         screen: "Mypage", // 클라이언트 앱에서 이 값을 사용하여 특정 화면으로 이동
+//         // 추가적인 필요한 데이터 전달 가능
+//         // 'custom_key': 'custom_value'
+//       },
+//       tokens: tokens, // 배열 형태로 토큰 전달
+//     };
 
-    console.log("Sending FCM message:", JSON.stringify(message, null, 2));
+//     console.log("Sending FCM message:", JSON.stringify(message, null, 2));
 
-    //- 메시지 전송
-    const response = await admin.messaging().sendEachForMulticast(message);
-    console.log("FCM response received:", response);
+//     //- 메시지 전송
+//     const response = await admin.messaging().sendEachForMulticast(message);
+//     console.log("FCM response received:", response);
 
-    // 실패한 토큰 처리 (선택적)
-    if (response.failureCount > 0) {
-      const failedTokens = [];
-      response.responses.forEach((resp, idx) => {
-        if (!resp.success) {
-          failedTokens.push(tokens[idx]);
-          console.error(`Token ${tokens[idx]} failed: ${resp.error}`);
-          // 필요시 실패한 토큰을 user.json에서 제거하는 로직 추가
-        }
-      });
-      console.log("Failed tokens:", failedTokens);
-    }
+//     // 실패한 토큰 처리 (선택적)
+//     if (response.failureCount > 0) {
+//       const failedTokens = [];
+//       response.responses.forEach((resp, idx) => {
+//         if (!resp.success) {
+//           failedTokens.push(tokens[idx]);
+//           console.error(`Token ${tokens[idx]} failed: ${resp.error}`);
+//           // 필요시 실패한 토큰을 user.json에서 제거하는 로직 추가
+//         }
+//       });
+//       console.log("Failed tokens:", failedTokens);
+//     }
 
-    res.status(200).json({
-      message: `알림 전송 완료`,
-      successCount: response.successCount,
-      failureCount: response.failureCount,
-    });
-  } catch (error) {
-    console.error("알림 전송 중 오류 발생:", error);
-    res.status(500).json({ error: "서버 내부 오류 발생" });
-  }
-});
+//     res.status(200).json({
+//       message: `알림 전송 완료`,
+//       successCount: response.successCount,
+//       failureCount: response.failureCount,
+//     });
+//   } catch (error) {
+//     console.error("알림 전송 중 오류 발생:", error);
+//     res.status(500).json({ error: "서버 내부 오류 발생" });
+//   }
+// });
 
 // HTTP 서버 생성
 const PORT = process.env.PORT || 8080;
