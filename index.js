@@ -35,6 +35,27 @@ const mockData = [
 
 // Initialize Express app
 const app = express();
+
+app.use(bodyParser.json());
+app.get("/kospi", (req, res) => {
+  const calculatedData = mockData.map((item) => {
+    const currentValue = item.value;
+    // 좀 더 현실적인 변동성 부여 (예: +- 1% 범위 내 랜덤 변동)
+    const fluctuation = (Math.random() - 0.5) * (currentValue * 0.02);
+    const nextValue = Math.max(0, currentValue + fluctuation); // 0 미만 방지
+    const change = nextValue - currentValue;
+    const changeRate = currentValue !== 0 ? change / currentValue : 0;
+    return {
+      ...item,
+      value: parseFloat(nextValue.toFixed(4)),
+      change: parseFloat(change.toFixed(4)),
+      changeRate: parseFloat(changeRate.toFixed(4)),
+      state: change >= 0 ? "Up" : "Down",
+    };
+  });
+  res.json(calculatedData);
+});
+
 // app.use(bodyParser.json());
 
 // // Firebase Admin SDK 초기화 - 경로 확인
